@@ -83,7 +83,7 @@ if __name__ == '__main__':
     # Dev props
     printerId = GeneratePrinterId()
     OctoEverywhereWsUri = "wss://starport-v1.octoeverywhere.com/octoclientws"
-    
+
     # Setup the http requester
     OctoHttpRequest.SetLocalHttpProxyPort(80)
     OctoHttpRequest.SetLocalHttpProxyIsHttps(False)
