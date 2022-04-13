@@ -83,25 +83,25 @@ if __name__ == '__main__':
     # Dev props
     printerId = GeneratePrinterId()
     OctoEverywhereWsUri = "wss://starport-v1.octoeverywhere.com/octoclientws"
-
+    
     # Setup the http requester
     OctoHttpRequest.SetLocalHttpProxyPort(80)
     OctoHttpRequest.SetLocalHttpProxyIsHttps(False)
     OctoHttpRequest.SetLocalOctoPrintPort(5000)
 
     # Special - Dev Env Setup
-    printerId = "0QVGBOO92TENVOVN9XW5T3KT6LV1XV8ODFUEQYWQ"
-    privateKey = "uduuitfqrsstnhhjpsxhmyqwvpxgnajqqbhxferoxunusjaybodfotkupjaecnccdxzwmeajqqmjftnhoonusnjatqcryxfvrzgibouexjflbrmurkhltmsd"
-    OctoHttpRequest.SetLocalhostAddress("192.168.86.57")
-    OctoHttpRequest.SetLocalOctoPrintPort(80)
-    #OctoEverywhereWsUri = "ws://192.168.86.74:80/octoclientws"
+    printerId = "UBJ521Z5PJQLJLKZUNKC7D82PYLHGVA485MSPWK2UMBTQBPJN3MYJNQ397LI"
+    privateKey = "tpsnUoJnNra86wbP2wFoHWzuWekzCX03zIKHXAdfEFOyMOfZm3sQfJZajPz6mTY4DYPIzqH3zRNMujfi"
+    OctoHttpRequest.SetLocalhostAddress("localhost")
+    OctoHttpRequest.SetLocalOctoPrintPort(8081)
+    OctoEverywhereWsUri = "ws://localhost:7265/ws"
 
     # Setup the local auth healper
     LocalAuth.Init(logger, None)
     LocalAuth.Get().SetApiKeyForTesting("SuperSecureApiKey")
 
     # Init the ping pong helper.
-    OctoPingPong.Init(logger, "C:\\Users\\quinn")
+    OctoPingPong.Init(logger, ".")
 
     # Setup the snapshot helper
     SnapshotHelper.Init(logger, None)
