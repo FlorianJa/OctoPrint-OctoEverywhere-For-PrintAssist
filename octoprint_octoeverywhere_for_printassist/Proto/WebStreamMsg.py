@@ -119,7 +119,7 @@ class WebStreamMsg(object):
         o = octoflatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from octoprint_octoeverywhere.Proto.HttpInitialContext import HttpInitialContext
+            from octoprint_octoeverywhere_for_printassist.Proto.HttpInitialContext import HttpInitialContext
             obj = HttpInitialContext()
             obj.Init(self._tab.Bytes, x)
             return obj
