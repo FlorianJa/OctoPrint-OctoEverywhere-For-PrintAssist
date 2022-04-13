@@ -4,8 +4,8 @@ import sys
 import random
 import string
 
-from octoprint_octoeverywhere.localauth import LocalAuth
-from octoprint_octoeverywhere.snapshothelper import SnapshotHelper
+from octoprint_octoeverywhere_for_printassist.localauth import LocalAuth
+from octoprint_octoeverywhere_for_printassist.snapshothelper import SnapshotHelper
 
 from .octoeverywhereimpl import OctoEverywhere
 from .octohttprequest import OctoHttpRequest
