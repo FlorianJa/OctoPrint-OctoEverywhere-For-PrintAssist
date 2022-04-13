@@ -1,16 +1,16 @@
 ---
 layout: plugin
 
-id: OctoEverywhere
-title: octoeverywhere
-description: Access Your OctoPrint Everywhere! Safe. Simple. Secure.
-author: Quinn Damerell
+id: OctoEverywhere-For-PrintAssist
+title: octoeverywhere for PrintAssist
+description: This plugin create the bridge between the PrintAssist chat bot and your Octorprint instance. The Plugin is based on the OctoEverywhere Plugin by Quinn Damerell.
+author: Florian Jasche
 license: AGPLv3
-date: 2020-07-22
+date: 2022-04-13
 
-homepage: https://www.OctoEverywhere.com
-source: https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere
-archive: https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere/archive/master.zip
+homepage: https://github.com/FlorianJa/OctoPrint-OctoEverywhere-For-PrintAssist
+source: https://github.com/FlorianJa/OctoPrint-OctoEverywhere-For-PrintAssist
+archive: https://github.com/FlorianJa/OctoPrint-OctoEverywhere-For-PrintAssist/archive/master.zip
 
 tags:
 - remote
