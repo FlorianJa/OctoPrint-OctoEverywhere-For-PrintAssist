@@ -548,7 +548,7 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
 
             # Run!
             # TODO: change for PrintAssist
-            OctoEverywhereWsUri = "ws://localhost:7265/ws"
+            OctoEverywhereWsUri = "ws://printassist.local:7265/ws"
             oe = OctoEverywhere(OctoEverywhereWsUri, printerId, privateKey, self._logger, self, self, self._plugin_version)
             oe.RunBlocking()
         except Exception as e:
@@ -559,8 +559,8 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
     def TryToPrintHostNameIps(self):
         try:
             try:
-                starportIp = socket.getaddrinfo('starport-v1.octoeverywhere.com', None, socket.AF_INET)[0][4][0]
-                mainSiteIp = socket.getaddrinfo('octoeverywhere.com', None, socket.AF_INET)[0][4][0]
+                starportIp = socket.getaddrinfo('printassist.local', None, socket.AF_INET)[0][4][0]
+                mainSiteIp = socket.getaddrinfo('printassist.local', None, socket.AF_INET)[0][4][0]
                 self._logger.info("IPV4 - starport:"+str(starportIp)+" main:"+str(mainSiteIp))
             except Exception as e:
                 self._logger.info("Failed to resolve host ipv4 name "+str(e))
