@@ -27,4 +27,4 @@ jobs:
         pip install octoprint
     - name: Analysing the code with pylint
       run: |
-        pylint ./octoprint_octoeverywhere/
+        pylint ./octoprint_octoeverywhere_for_printassist/
