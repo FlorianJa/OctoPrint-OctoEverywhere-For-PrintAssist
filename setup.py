@@ -3,30 +3,30 @@
 from setuptools import setup
 
 # The plugin's identifier, has to be unique
-plugin_identifier = "octoeverywhere"
+plugin_identifier = "octoeverywhere_for_printassist"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
-plugin_package = "octoprint_octoeverywhere"
+plugin_package = "octoprint_octoeverywhere_for_printassist"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
-plugin_name = "OctoEverywhere"
+plugin_name = "OctoEverywhere for PrintAssist"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "1.6.6"
+plugin_version = "1.0.0"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
-plugin_description = """Access OctoPrint remotely over the internet anywhere! Including full webcam streaming. Free. Simple. Secure."""
+plugin_description = """This plugin create the bridge between the PrintAssist chat bot and your Octorprint instance. The Plugin is based on the OctoEverywhere Plugin by Quinn Damerell."""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "Quinn Damerell"
+plugin_author = "Florian Jasche"
 
 # The plugin's author's mail address.
-plugin_author_email = "quinnd@outlook.com"
+plugin_author_email = "florian.jasche@gmail.com"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
-plugin_url = "http://www.OctoEverywhere.com"
+plugin_url = "https://github.com/FlorianJa/OctoPrint-OctoEverywhere-For-PrintAssist"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data via __plugin_license__ in the plugin module
 plugin_license = "AGPLv3"
