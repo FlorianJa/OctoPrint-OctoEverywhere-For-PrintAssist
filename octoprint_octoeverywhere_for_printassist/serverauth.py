@@ -19,7 +19,7 @@ class ServerAuthHelper:
     c_ServerAuthKeyVersion = 1
 
     # Version 1 of the RSA public key.
-    c_ServerPublicKey = "-----BEGIN RSA PUBLIC KEY-----\nMIICCgKCAgEAwOjuEvc4bnY+MNkzG8ztlUhjPcRVSKGX53fuzmjshuwrhNu9KdNO\nlvEH4ORZI6S3xnXRhzupWYD8M2CVzsNSKJulNPe5hgoxct2bynoEwzzEKXkuypuw\nVtr+/nETdD+quWdS4oEMvmLFI1+7+Qlq4lqddPgIjC5xAvwN3d1NYJMFY3M7jHaq\n2JNK3g6YsEyUYlBFkvrgB8SXjQCrevriANP2UPzZl2uEJh/ibH85CAnfoPPCdGpp\nkfY2KG/fzDVv7nE/7SYW/44RUv4BC6wyJY7PB+ZhTXAcVs67hq6l2/dHOUEek455\n4vJf08sp85JhmeZgEg9COF5j7rAHnnOjENYVVW9FCQam6vscXETrVYX++6QMD/1G\nPdFnZs4KoG2i0LqqC3RoS/Nt3d2CeIl6U+BCueY5icxy5EgsAF4H48yIN7jx1oUd\nJk2TJQsvTnMt7sdIL96v1U/fl7U7kcHxHKXn79Mhtf4yUKnApwEL8JRVmRSL8y8x\nMEqQzTZsBYradQXjPL5QSNwgAGhVEYWgmUGmY8esUVF35/HuzgkJmZjgldU5WJGr\n6pvONbuDIoAwz2EnyVS7r+IL6Eqy2xbA8h5YllJ/qcau5V4YGt2C4JDK4PuX4gTM\n71iVsKozshWsXK8ctySQ0Jbc0O0zVlRTzCw0xH78lWaSHU7H2GitYF0CAwEAAQ==\n-----END RSA PUBLIC KEY-----\n"
+    c_ServerPublicKey = b"""-----BEGIN PUBLIC KEY-----\nMIICITANBgkqhkiG9w0BAQEFAAOCAg4AMIICCQKCAgBZ1aJw+M6p88jObamIINij\nppZVnrdSG/dekqmEyEx8hQ6fDnn3zFKEzAYTEEnT7GbgEHthpseobRjT46TVcyDX\n7SJ/1uaEMsgw0aIB55ijo5I9YL588CqBhGvXn4q9pFOn9Z0R/Rdtk5WGGadYTszz\nBSXprJ13E2ZMgRprIR1rv2mItbrwQ8XmRwtwiH3A6XX7yjQ4hSQt9neTOhwGZG9a\n6IKAHL3OpuWervc8u3CZrUuQE0FXDD5OCYQ1vOdkSQwsFY89h5hEpAp+kXQCzDGP\nJMbtr+3lXPap91PAHqeD45CDxg5tOL0/ykhVrAywXM+mmuwjn5HzgsseCHNxbn45\nHGJYtA7vDUBbtFdIt250nTDhJpgPyZKKG+We71bUm55C6fCeay8pGGgBZeG25zgk\nuB2CfFMHdwcKTRCykrGh3umKeHc4mUFmJAr90+Fua+CPxksiDGCzjtDSxWDoYkpK\niRPw2UCwAp1g2u3QVcxHjwq1tOfe1+BjDfN2i9f0bjWANsj0OTOlaJH9GBs8vgPe\n1flj39yX9f/HkNyI5QuJL+xRy+/+CSqCBUW+y+eU7g6HCpyrMBcP0amxKHKFCoOJ\nDrHpT25eNCZWXMQYPvViW/uVH2UiPgRBxeSXUvWrUOUU6x4G+FsNhcn+cX3XS19t\nq1Lnq5bTwPiTNrsY6og53wIDAQAB\n-----END PUBLIC KEY-----\n"""
 
     # Defines the length of the challenge we will encrypt.
     c_ServerAuthChallengeLength = 64
@@ -33,7 +33,7 @@ class ServerAuthHelper:
     # Returns a string that is our challenge encrypted with the public RSA key.
     def GetEncryptedChallenge(self):
         try:
-            publicKey = rsa.PublicKey.load_pkcs1(ServerAuthHelper.c_ServerPublicKey)
+            publicKey = rsa.PublicKey.load_pkcs1_openssl_pem(ServerAuthHelper.c_ServerPublicKey)
             return rsa.encrypt(self.Challenge.encode('utf8'), publicKey)
         except Exception as e:
             self.Logger.error("GetEncryptedChallenge failed.  "+str(e))
