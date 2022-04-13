@@ -93,12 +93,12 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
 
                 # version check: github repository
                 type="github_release",
-                user="QuinnDamerell",
-                repo="OctoPrint-OctoEverywhere",
+                user="Florianja",
+                repo="OctoPrint-OctoEverywhere-For-PrintAssist",
                 current=self._plugin_version,
 
                 # update method: pip
-                pip="https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere/archive/{target_version}.zip"
+                pip="https://github.com/florianja/OctoPrint-OctoEverywhere-For-PrintAssist/archive/{target_version}.zip"
             )
         )
 
@@ -364,9 +364,11 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
 
     # Should be called on a non-main thread!
     # Make a http request to ensure this printer is not owned and shows a pop-up to help the user finish the install if not.
+    # TODO: change for PrintAssist
     def CheckIfPrinterIsSetupAndShowMessageIfNot(self):
         try:
             # Check if this printer is owned or not.
+            # TODO: change for PrintAssist
             response = requests.post('https://octoeverywhere.com/api/printer/info', json={ "Id": self.EnsureAndGetPrinterId() })
             if response.status_code != 200:
                 raise Exception("Invalid status code "+str(response.status_code))
@@ -404,6 +406,7 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
     c_OctoEverywherePrivateKeyLength = 80
 
     # The url for the add printer process. Note this must have at least one ? and arg because users of it might append &source=blah
+    # TODO: change for PrintAssist
     c_OctoEverywhereAddPrinterUrl = "https://octoeverywhere.com/getstarted?isFromOctoPrint=true&printerid="
 
     # Returns a new printer Id. This needs to be crypo-random to make sure it's not predictable.
@@ -544,13 +547,15 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
             OctoHttpRequest.SetLocalHttpProxyIsHttps(frontendIsHttps)
 
             # Run!
-            OctoEverywhereWsUri = "wss://starport-v1.octoeverywhere.com/octoclientws"
+            # TODO: change for PrintAssist
+            OctoEverywhereWsUri = "ws://localhost:7265/ws"
             oe = OctoEverywhere(OctoEverywhereWsUri, printerId, privateKey, self._logger, self, self, self._plugin_version)
             oe.RunBlocking()
         except Exception as e:
             self._logger.error("Exception thrown out of main runner. "+str(e))
 
     # For logging and debugging purposes, print the IPs the hostname is resolving to.
+    # TODO: change for PrintAssist
     def TryToPrintHostNameIps(self):
         try:
             try:
@@ -623,7 +628,7 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
             return default
         return value
 
-__plugin_name__ = "OctoEverywhere!"
+__plugin_name__ = "OctoEverywhere for PrintAssist"
 __plugin_pythoncompat__ = ">=2.7,<4" # py 2.7 or 3
 
 def __plugin_load__():

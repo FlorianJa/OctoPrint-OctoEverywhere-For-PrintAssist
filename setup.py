@@ -13,7 +13,8 @@ plugin_package = "octoprint_octoeverywhere_for_printassist"
 plugin_name = "OctoEverywhere for PrintAssist"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "1.0.0"
+# We use the original OctoEverywhere version as prefix + -PA- to indicate from which version our plugin was forked.
+plugin_version = "1.6.6-PA-1.0.1"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
