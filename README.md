@@ -1,3 +1,7 @@
+# This fork of [Octoprint-Everywhere](https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere) is customized to work with a self hosted server for PrintAssist, a chatbot for controlling 3D printers. See the original readme below.
+
+
+
 <p align="center"><img src="https://octoeverywhere.com/img/logo.png" alt="OctoEverywhere's Logo" style="width:100px" /></p>
 <h1 align="center" style="margin-bottom:20px">OctoEverywhere</h1>
 
