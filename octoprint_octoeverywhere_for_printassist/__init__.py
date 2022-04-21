@@ -62,7 +62,7 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
         printerUrl = self.GetAddPrinterUrl()
         if printerUrl is None:
             self._logger.error("Failed to get OctoPrinter Url for wizard.")
-            printerUrl = "https://octoeverywhere.com/getstarted"
+            printerUrl = "https://t.me/printassistdemobot"
         return {"AddPrinterUrl": printerUrl}
 
     # Return the default settings.
@@ -407,7 +407,9 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
 
     # The url for the add printer process. Note this must have at least one ? and arg because users of it might append &source=blah
     # TODO: change for PrintAssist
-    c_OctoEverywhereAddPrinterUrl = "https://octoeverywhere.com/getstarted?isFromOctoPrint=true&printerid="
+    #c_OctoEverywhereAddPrinterUrl = "https://octoeverywhere.com/getstarted?isFromOctoPrint=true&printerid="
+
+    c_OctoEverywhereAddPrinterUrl = "https://t.me/printassistdemobot?start="
 
     # Returns a new printer Id. This needs to be crypo-random to make sure it's not predictable.
     def GeneratePrinterId(self):

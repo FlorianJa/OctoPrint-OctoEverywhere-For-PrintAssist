@@ -1,0 +1,34 @@
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+<div style="display: flex; align-items: center; justify-content: center; flex-direction:column; margin-bottom:30px;">
+    <h3>OctoEverywhere for PrintAssist</h3>
+</div>
+
+<p style="padding-bottom:10px"></p>
+
+<p style="padding-bottom:10px"></p>
+
+<p>
+    <a class="btn btn-primary" target="_blank" href="" data-bind="attr: { href: settings.plugins.octoeverywhere_for_printassist.AddPrinterUrl } ">Open PrintAssist in Telegram <i class="fa fa-external-link"></i></a>
+</p>
+<br/>
+<p>
+    <a href="https://github.com/FlorianJa/OctoPrint-OctoEverywhere-For-PrintAssist/issues">Need help or want to send feedback?</a>
+</p>
+<br/>
+<div>
+    <div>
+        <small>
+            <a href="#" class="muted" onclick="$(this).children().toggleClass('fa-caret-right fa-caret-down').parent().parent().parent().next().slideToggle('fast')"><i class="fa fa-caret-right"></i> Advanced</a>
+        </small>
+    </div>
+    <div class="hide">        
+        <div class="control-group">
+            <label class="control-label" style="padding-top:20px;">Your Printer Id: <strong>(don't share this!)</strong></label>
+            <div class="controls">
+                <div id="qrcode"></div>
+                <span data-bind="text: settings.plugins.octoeverywhere_for_printassist.PrinterKey"></span>
+            </div>
+        </div>        
+    </div>
+</div>
