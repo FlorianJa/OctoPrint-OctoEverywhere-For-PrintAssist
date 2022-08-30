@@ -10,7 +10,7 @@ from octoprint_octoeverywhere_for_printassist.snapshothelper import SnapshotHelp
 from .octoeverywhereimpl import OctoEverywhere
 from .octohttprequest import OctoHttpRequest
 from .threaddebug import ThreadDebug
-from .octopingpong import OctoPingPong
+#from .octopingpong import OctoPingPong
 from .slipstream import Slipstream
 #from .notificationshandler import NotificationsHandler
 

@@ -18,7 +18,7 @@ from .snapshothelper import SnapshotHelper
 from .octoeverywhereimpl import OctoEverywhere
 from .octohttprequest import OctoHttpRequest
 from .notificationshandler import NotificationsHandler
-from .octopingpong import OctoPingPong
+#from .octopingpong import OctoPingPong
 from .slipstream import Slipstream
 
 class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
