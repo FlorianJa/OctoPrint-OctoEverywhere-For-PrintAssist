@@ -17,8 +17,8 @@ $(function() {
 
         // Used by the wizard to get the printer id.
         self.onWizardDetails = function (response) {
-            if (response.octoeverywhere.details.AddPrinterUrl){
-                self.printerURL(response.octoeverywhere.details.AddPrinterUrl)
+            if (response.octoeverywhere_for_printassist.details.AddPrinterUrl){
+                self.printerURL(response.octoeverywhere_for_printassist.details.AddPrinterUrl)
             }
         };
 
@@ -433,7 +433,9 @@ $(function() {
         {
             // Try to get the settings required for the notification check in
             try {
-                DoNotificationCheckIn(octoEverywhereSettings.PrinterKey(), octoEverywhereSettings.PluginVersion(), IsConnectedViaOctoEverywhere())
+                //DoNotificationCheckIn(octoEverywhereSettings.PrinterKey(), octoEverywhereSettings.PluginVersion(), IsConnectedViaOctoEverywhere())
+                new QRCode(document.getElementById("qrcode"), octoEverywhereSettings.PrinterKey());
+                OctoELog(octoEverywhereSettings.PrinterKey());
             } catch (error) {
                 OctoELog("DoNotificationCheckIn failed." + error);
             }
@@ -445,7 +447,7 @@ $(function() {
         self.onBeforeBinding = function() {
             // Set the settings and fire the callback.
             self.settings = self.settingsViewModel.settings;
-            OnSettingsReady(self.settings.plugins.octoeverywhere);
+            OnSettingsReady(self.settings.plugins.octoeverywhere_for_printassist);
         };
     }
 
@@ -457,6 +459,6 @@ $(function() {
      OCTOPRINT_VIEWMODELS.push({
          construct: OctoeverywhereViewModel,
          dependencies: ["wizardViewModel", "settingsViewModel"],
-         elements: ["#wizard_plugin_octoeverywhere"]
+         elements: ["#wizard_plugin_octoeverywhere_for_printassist"]
      });
  });
