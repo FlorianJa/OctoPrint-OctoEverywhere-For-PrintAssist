@@ -370,7 +370,7 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
         try:
             # Check if this printer is owned or not.
             # TODO: change for PrintAssist
-            response = requests.post('https://octoeverywhere.com/api/printer/info', json={ "Id": self.EnsureAndGetPrinterId() })
+            response = requests.post('https://octoeverywhere.com/api/printer/info', json={ "Id": self.EnsureAndGetPrinterId() }, timeout=10)
             if response.status_code != 200:
                 raise Exception("Invalid status code "+str(response.status_code))
 

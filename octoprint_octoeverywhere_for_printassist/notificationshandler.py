@@ -478,7 +478,7 @@ class NotificationsHandler:
                 # Make the request.
                 # Since we are sending the snapshot, we must send a multipart form.
                 # Thus we must use the data and files fields, the json field will not work.
-                r = requests.post(eventApiUrl, data=args, files=files)
+                r = requests.post(eventApiUrl, data=args, files=files, timeout=10)
 
                 # Check for success.
                 if r.status_code == 200:

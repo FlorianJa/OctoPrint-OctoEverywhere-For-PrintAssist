@@ -190,7 +190,7 @@ class OctoPingPong:
                     "LowestLatDelta": str(lowestLatencyDelta)
                 }
             }
-            response = requests.post('https://octoeverywhere.com/api/stats/telemetryaccumulator', json=data)
+            response = requests.post('https://octoeverywhere.com/api/stats/telemetryaccumulator', json=data, timeout=10)
             if response.status_code != 200:
                 self.Logger.warn("Failed to report ping latency "+response.status_code)
                 return
@@ -206,7 +206,7 @@ class OctoPingPong:
                         "LowestLatMs": str(lowestLatencyMs)
                     }
                 }
-                response = requests.post('https://octoeverywhere.com/api/stats/telemetryaccumulator', json=data)
+                response = requests.post('https://octoeverywhere.com/api/stats/telemetryaccumulator', json=data, timeout=10)
                 if response.status_code != 200:
                     self.Logger.warn("Failed to report ping non-default latency "+response.status_code)
                     return
