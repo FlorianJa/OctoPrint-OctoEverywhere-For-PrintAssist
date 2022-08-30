@@ -550,7 +550,7 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
 
             # Run!
             # TODO: change for PrintAssist
-            OctoEverywhereWsUri = "ws://localhost:7265/ws"
+            OctoEverywhereWsUri = "wss://printassist.fit.fraunhofer.de/ws"
             oe = OctoEverywhere(OctoEverywhereWsUri, printerId, privateKey, self._logger, self, self, self._plugin_version)
             oe.RunBlocking()
         except Exception as e:

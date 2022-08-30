@@ -93,12 +93,13 @@ if __name__ == '__main__':
     printerId = "UBJ521Z5PJQLJLKZUNKC7D82PYLHGVA485MSPWK2UMBTQBPJN3MYJNQ397LI"
     privateKey = "tpsnUoJnNra86wbP2wFoHWzuWekzCX03zIKHXAdfEFOyMOfZm3sQfJZajPz6mTY4DYPIzqH3zRNMujfi"
     OctoHttpRequest.SetLocalhostAddress("localhost")
-    OctoHttpRequest.SetLocalOctoPrintPort(8081)
+    OctoHttpRequest.SetLocalOctoPrintPort(3000)
     OctoEverywhereWsUri = "ws://localhost:7265/ws"
+    #OctoEverywhereWsUri = "wss://printassist.fit.fraunhofer.de/ws"
 
     # Setup the local auth healper
     LocalAuth.Init(logger, None)
-    LocalAuth.Get().SetApiKeyForTesting("SuperSecureApiKey")
+    LocalAuth.Get().SetApiKeyForTesting("B347BEF13EC54DB48342F2E6F672BBF8")
 
     # Init the ping pong helper.
     OctoPingPong.Init(logger, ".")
