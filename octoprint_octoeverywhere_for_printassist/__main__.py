@@ -102,7 +102,8 @@ if __name__ == '__main__':
     LocalAuth.Get().SetApiKeyForTesting("B347BEF13EC54DB48342F2E6F672BBF8")
 
     # Init the ping pong helper.
-    OctoPingPong.Init(logger, ".")
+    # disabled until the server part is working.
+    #OctoPingPong.Init(logger, ".")
 
     # Setup the snapshot helper
     SnapshotHelper.Init(logger, None)

@@ -122,7 +122,8 @@ class OctoeverywherePlugin(octoprint.plugin.StartupPlugin,
         SnapshotHelper.Init(self._logger, self._settings)
 
         # Init the ping helper
-        OctoPingPong.Init(self._logger, self.get_plugin_data_folder())
+        # disabled until server part is working.
+        # OctoPingPong.Init(self._logger, self.get_plugin_data_folder())
 
         # Create the notification object now that we have the logger.
         self.NotificationHandler = NotificationsHandler(self._logger, self._printer)
